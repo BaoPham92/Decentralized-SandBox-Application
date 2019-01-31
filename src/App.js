@@ -1,25 +1,29 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Web3 from 'web3'
 
 class App extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      isConnected: false
+    }
+
+    this.web3 = new Web3(Web3.givenProvider || "ws://localhost:7545");
+
+  }
+
+  componentWillMount() {
+    // Retrieve currently selected account with MetaMask.
+    this.web3.eth.getAccounts().then(res => this.setState({ accounts: res }))
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h2>Download MetaMask for (Chrome or Brave) and log into an account.</h2><br/>
+        <h4>Current Account address:</h4>
+        <p>Currently connected: {this.state.accounts}</p>
       </div>
     );
   }
