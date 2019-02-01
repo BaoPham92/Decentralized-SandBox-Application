@@ -19,11 +19,14 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.accounts)
+    console.log(this.web3.eth.getBalance(this.state.accounts[0]))
     return (
       <div className="App">
         <h2>Download MetaMask for (Chrome or Brave) and log into an account.</h2><br/>
         <h4>Current Account address:</h4>
         <p>Currently connected: {this.state.accounts}</p>
+        {/* <p>Current Account Balance: {this.state.}</p>  */}
       </div>
     );
   }
