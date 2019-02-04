@@ -6,7 +6,9 @@ class App extends Component {
     super()
 
     this.state = {
-      isConnected: false
+      isConnected: false,
+      accounts: [],
+      balance: undefined
     }
 
     this.web3 = new Web3(Web3.givenProvider || "ws://localhost:7545");
@@ -15,18 +17,25 @@ class App extends Component {
 
   componentWillMount() {
     // Retrieve currently selected account with MetaMask.
-    this.web3.eth.getAccounts().then(res => this.setState({ accounts: res }))
+    this.web3.eth.getAccounts().then(res => this.setState({ accounts: res },
+    () => 
+      // Convert Wei to Ether.
+      this.web3.eth.getBalance(this.state.accounts[0])
+        .then(res =>
+          this.web3.utils.fromWei(res, 'ether') // Conversion to ether for balance.
+        )
+        .then(res =>
+          this.setState({ balance: res })
+        )
+      ))
   }
 
   render() {
-    console.log(this.accounts)
-    console.log(this.web3.eth.getBalance(this.state.accounts[0]))
     return (
       <div className="App">
         <h2>Download MetaMask for (Chrome or Brave) and log into an account.</h2><br/>
         <h4>Current Account address:</h4>
-        <p>Currently connected: {this.state.accounts}</p>
-        {/* <p>Current Account Balance: {this.state.}</p>  */}
+        <p>Currently connected: {this.state.accounts[0]}</p>
       </div>
     );
   }
