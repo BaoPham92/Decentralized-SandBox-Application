@@ -11,6 +11,11 @@ Use the following commands to get the sandbox project up and running after insta
 > - npm install
 > - npm run start
 
+## Notes:
+- Ganache / MetaMask - You will notice addresses from either environments (Ganache / MetaMask).
+
+- Ganache addresses are production tools with token ETH (Ethereum) balances. Here you should be able to click and receive the current balance of the address. (Not yet converted from wei for Web3.js development purposes.)
+
 ## Todo:
 
-1. Write up a solution for production in case if no one has a active MetaMask account. Using production environments for development such as [Ganache](https://truffleframework.com/docs/ganache/overview) would be a useful tool for blockchain sandbox development. You are provided enough fake Ethereum in order to replicate transactions or even your smart contracts.
+1. ~~Write up a solution for production in case if no one has a active MetaMask account. Using production environments for development such as [Ganache](https://truffleframework.com/docs/ganache/overview) would be a useful tool for blockchain sandbox development. You are provided enough fake Ethereum in order to replicate transactions or even your smart contracts.~~
