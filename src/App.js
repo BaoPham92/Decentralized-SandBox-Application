@@ -27,15 +27,17 @@ class App extends Component {
         .then(res =>
           this.setState({ balance: res })
         )
+        .catch(err => console.log(err))
       ))
   }
 
   render() {
     return (
       <div className="App">
-        <h2>Download MetaMask for (Chrome or Brave) and log into an account.</h2><br/>
+        <h2>Download MetaMask (Chrome or Brave) and log into an account.</h2><br/>
         <h4>Current Account address:</h4>
         <p>Currently connected: {this.state.accounts[0]}</p>
+        <p>Current Balance: {this.state.balance} ETH (Currently in wallet)</p>
       </div>
     );
   }
