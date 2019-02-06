@@ -19,3 +19,9 @@ Use the following commands to get the sandbox project up and running after insta
 ## Todo:
 
 1. ~~Write up a solution for production in case if no one has a active MetaMask account. Using production environments for development such as [Ganache](https://truffleframework.com/docs/ganache/overview) would be a useful tool for blockchain sandbox development. You are provided enough fake Ethereum in order to replicate transactions or even your smart contracts.~~
+
+2. Write up a solution creating a smart contract. Along with the smart contract on the main network or using a node, the contract will have the following structure:
+> - Smart Contract Data
+> - Create Transaction Object
+> - Transaction Signatur & Serialization
+> - Broadcasting Transaction
