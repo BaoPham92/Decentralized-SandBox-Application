@@ -1,5 +1,3 @@
-README.MD
-
 # About:
 
 This is currently a sandbox using ReactJS to integrate blockchain technologies. Using [Web3.js](https://web3js.readthedocs.io/en/1.0/index.html) which is used upon the ([ETH](https://www.ethereum.org/) or Ethereum for decentralized applications.)
@@ -11,7 +9,7 @@ Download MetaMask (extension) for [Chrome](https://www.google.com/chrome/?brand=
 
 - In MetaMask's UI, you will see the main ethereum network. Choose the Ropsten Test Network.
 
-- After confirming that your MetaMask account is using the test netWork, continue to the Ropsten test network's [faucet](https://faucet.ropsten.be/) in order to send your account some test Ether for production use.
+- After confirming that your MetaMask account is using the test netWork, continue to the Ropsten test network's [faucet](https://faucet.ropsten.be/3001) or [MetaMask's faucet](https://faucet.metamask.io/) in order to send your account some test Ether for production use.
 
 - Run the following commands in your CLI below:
 > - npm install
